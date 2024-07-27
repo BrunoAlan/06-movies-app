@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { View } from 'react-native';
 import { Movie } from '../../../core/entities/movie.entity';
 import { ScrollView } from 'react-native-gesture-handler';
 import MoviePoster from './MoviePoster';
@@ -20,4 +20,3 @@ const PosterCarousel = ({ height = 440, movies }: Props) => {
   );
 };
 export default PosterCarousel;
-const styles = StyleSheet.create({});

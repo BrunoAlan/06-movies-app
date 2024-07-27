@@ -15,6 +15,7 @@ export const getMovieCastUseCase = async (
     const actors = cast.map(CastMapper.fromMovieDBCastToEntity);
 
     return actors;
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
     throw new Error(`Cannot get movie cast ${movieId}`);
   }

@@ -1,4 +1,4 @@
-import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
+import { Image, Pressable, StyleSheet, View } from 'react-native';
 import { Movie } from '../../../core/entities/movie.entity';
 import { useRouter } from 'expo-router';
 

@@ -6,7 +6,6 @@ import {
   useWindowDimensions,
   View,
 } from 'react-native';
-import type { FullMovie } from '../../../core/entities/movie.entity';
 import { useNavigation } from 'expo-router';
 
 interface Props {

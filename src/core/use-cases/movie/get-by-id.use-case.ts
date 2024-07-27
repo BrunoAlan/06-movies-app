@@ -11,6 +11,7 @@ export const getMovieByIdUseCase = async (
     const movie = await fetcher.get<MovieDBMovie>(`/${movieId}`);
     const fullMovie = MovieMapper.fromMovieDBToEntity(movie);
     return fullMovie;
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
     throw new Error(`Cannot get movie by id: ${movieId}`);
   }

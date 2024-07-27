@@ -24,6 +24,7 @@ export class AxiosAdapter implements HttpAdapter {
       const { data } = await this.axiosInstance.get<T>(url, options);
 
       return data;
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
       throw new Error(`Error fetching get: ${url} `);
     }

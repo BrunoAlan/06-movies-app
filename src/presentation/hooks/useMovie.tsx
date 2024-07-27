@@ -10,6 +10,7 @@ export const useMovie = (movieId: number) => {
 
   useEffect(() => {
     loadMovie();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [movieId]);
 
   const loadMovie = async () => {

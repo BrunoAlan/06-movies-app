@@ -1,7 +1,6 @@
 import {
   NativeScrollEvent,
   NativeSyntheticEvent,
-  StyleSheet,
   Text,
   View,
 } from 'react-native';
@@ -64,4 +63,3 @@ const HorizontalCarousel = ({ movies, title, loadNextPage }: Props) => {
   );
 };
 export default HorizontalCarousel;
-const styles = StyleSheet.create({});
