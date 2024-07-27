@@ -1,6 +1,8 @@
 import { Link } from 'expo-router';
 import { View, Text } from 'react-native';
+import { useMovies } from '../../hooks/useMovies';
 const HomeScreen = () => {
+  const asd = useMovies();
   return (
     <View>
       <Text>HomeScreen</Text>
