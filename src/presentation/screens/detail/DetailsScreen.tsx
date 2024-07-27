@@ -5,6 +5,7 @@ import MovieHeader from '../../components/movie/MovieHeader';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import MovieDetail from '../../components/movie/MovieDetail';
 import { ScrollView } from 'react-native-gesture-handler';
+import FullScreenLoader from '../../components/loader/FullScreenLoader';
 
 const DetailsScreen = () => {
   const { movieId = 0 } = useLocalSearchParams();
@@ -12,12 +13,7 @@ const DetailsScreen = () => {
   const { isLoading, movie, cast } = useMovie(+movieId);
 
   if (isLoading) {
-    return (
-      <View>
-        <SafeAreaView />
-        <ActivityIndicator />
-      </View>
-    );
+    return <FullScreenLoader />;
   }
 
   return (
