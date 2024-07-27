@@ -30,7 +30,6 @@ const HorizontalCarousel = ({ movies, title }: Props) => {
         )}
         horizontal
         showsHorizontalScrollIndicator={false}
-        // contentContainerStyle={{ paddingLeft: 10 }}
       />
     </View>
   );
