@@ -9,7 +9,7 @@ export const useMovies = () => {
   const [popular, setPopular] = useState<Movie[]>([]);
   const [topRated, setTopRated] = useState<Movie[]>([]);
   const [upcoming, setUpcoming] = useState<Movie[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     initialLoad();
@@ -31,7 +31,7 @@ export const useMovies = () => {
     setPopular(popular);
     setTopRated(topRated);
     setUpcoming(upcoming);
-    setIsLoading;
+    setIsLoading(false);
   };
 
   return {
