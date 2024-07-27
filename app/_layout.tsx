@@ -12,6 +12,13 @@ export default function RootLaout() {
             headerShown: false,
           }}
         />
+        <Stack.Screen
+          name='details'
+          options={{
+            title: 'Details',
+            headerShown: false,
+          }}
+        />
       </Stack>
     </GestureHandlerRootView>
   );
