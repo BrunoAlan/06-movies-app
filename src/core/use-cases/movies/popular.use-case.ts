@@ -1,6 +1,6 @@
 import { HttpAdapter } from '../../../config/adapters/http/http.adapter';
-import { MovieDBResponse } from '../../../infraestructure/interfaces/movies-db.responses';
-import { MovieMapper } from '../../../infraestructure/mappers.movie.mapper';
+import { MovieDBMoviesResponse } from '../../../infrastructure/interfaces/movies-db.responses';
+import { MovieMapper } from '../../../infrastructure/mappers/mappers.movie.mapper';
 import type { Movie } from '../../entities/movie.entity';
 
 interface Options {
@@ -13,7 +13,7 @@ export const moviesPopularUseCase = async (
   options?: Options
 ): Promise<Movie[]> => {
   try {
-    const popular = await fetcher.get<MovieDBResponse>('/popular', {
+    const popular = await fetcher.get<MovieDBMoviesResponse>('/popular', {
       params: {
         page: options?.page || 1,
       },

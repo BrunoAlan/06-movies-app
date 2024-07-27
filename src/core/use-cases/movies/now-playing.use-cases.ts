@@ -1,8 +1,6 @@
 import { HttpAdapter } from '../../../config/adapters/http/http.adapter';
-import { NowPlayingResponse } from '../../../infraestructure/interfaces/movies-db.responses';
-import { MovieMapper } from '../../../infraestructure/mappers.movie.mapper';
-
-// import { MovieMapper } from '../../../infrastructure/mappers/movie.mapper';
+import { NowPlayingResponse } from '../../../infrastructure/interfaces/movies-db.responses';
+import { MovieMapper } from '../../../infrastructure/mappers/mappers.movie.mapper';
 import type { Movie } from '../../entities/movie.entity';
 
 export const moviesNowPlayingUseCase = async (
