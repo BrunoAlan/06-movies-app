@@ -1,8 +1,6 @@
 import { useLocalSearchParams } from 'expo-router';
-import { View, ActivityIndicator } from 'react-native';
 import { useMovie } from '../../hooks/useMovie';
 import MovieHeader from '../../components/movie/MovieHeader';
-import { SafeAreaView } from 'react-native-safe-area-context';
 import MovieDetail from '../../components/movie/MovieDetail';
 import { ScrollView } from 'react-native-gesture-handler';
 import FullScreenLoader from '../../components/loader/FullScreenLoader';
