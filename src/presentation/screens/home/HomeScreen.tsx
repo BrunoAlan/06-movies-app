@@ -1,15 +1,27 @@
-import { Link } from 'expo-router';
 import { View, Text } from 'react-native';
 import { useMovies } from '../../hooks/useMovies';
+import { ScrollView } from 'react-native-gesture-handler';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import PosterCarousel from '../../components/movies/PosterCarousel';
 const HomeScreen = () => {
-  const asd = useMovies();
+  const { top } = useSafeAreaInsets();
+  const { isLoading, nowPlaying, popular, topRated, upcoming, error } =
+    useMovies();
+
+  if (isLoading) {
+    return (
+      <View>
+        <Text>Loading...</Text>
+      </View>
+    );
+  }
+
   return (
-    <View>
-      <Text>HomeScreen</Text>
-      <Link asChild href={'/details'}>
-        <Text>Go to Details</Text>
-      </Link>
-    </View>
+    <ScrollView>
+      <View style={{ paddingTop: top + 20, paddingBottom: 30 }}>
+        <PosterCarousel movies={nowPlaying} />
+      </View>
+    </ScrollView>
   );
 };
 export default HomeScreen;
