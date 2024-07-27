@@ -1,5 +1,5 @@
 import { Cast } from '../../core/entities/cast.entity';
-import { MovieDBCast } from '../interfaces/movie-db.responses';
+import { MovieDBCast } from '../interfaces/movies-db.responses';
 
 export class CastMapper {
   static fromMovieDBCastToEntity(actor: MovieDBCast): Cast {

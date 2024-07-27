@@ -1,19 +1,40 @@
 import { useLocalSearchParams, useNavigation } from 'expo-router';
 import { useEffect } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, ActivityIndicator } from 'react-native';
+import { useMovie } from '../../hooks/useMovie';
+import MovieHeader from '../../components/movie/MovieHeader';
+import {
+  SafeAreaView,
+  useSafeAreaInsets,
+} from 'react-native-safe-area-context';
+import { StatusBar } from 'expo-status-bar';
+import MovieDetail from '../../components/movie/MovieDetail';
+import { ScrollView } from 'react-native-gesture-handler';
 
 const DetailsScreen = () => {
-  const navigation = useNavigation();
-  const { movieId } = useLocalSearchParams();
+  const { movieId = 0 } = useLocalSearchParams();
+  const insets = useSafeAreaInsets();
 
-  useEffect(() => {
-    navigation.setOptions({ title: 'Details' });
-  }, []);
+  const { isLoading, movie } = useMovie(+movieId);
+
+  if (isLoading) {
+    return (
+      <View>
+        <SafeAreaView />
+        <ActivityIndicator />
+      </View>
+    );
+  }
 
   return (
-    <View>
-      <Text>DetailsScreen</Text>
-    </View>
+    <ScrollView>
+      <MovieHeader
+        originalTitle={movie!.title}
+        title={movie!.title}
+        poster={movie!.poster}
+      />
+      <MovieDetail movie={movie!} />
+    </ScrollView>
   );
 };
 export default DetailsScreen;

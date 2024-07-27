@@ -1,4 +1,5 @@
 import { Stack } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 export default function RootLaout() {
@@ -15,7 +16,6 @@ export default function RootLaout() {
         <Stack.Screen
           name='details'
           options={{
-            title: 'Details',
             headerShown: false,
           }}
         />
