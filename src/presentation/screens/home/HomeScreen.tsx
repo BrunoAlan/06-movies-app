@@ -6,8 +6,14 @@ import PosterCarousel from '../../components/movies/PosterCarousel';
 import HorizontalCarousel from '../../components/movies/HorizontalCarousel';
 const HomeScreen = () => {
   const { top } = useSafeAreaInsets();
-  const { isLoading, nowPlaying, popular, topRated, upcoming, error } =
-    useMovies();
+  const {
+    isLoading,
+    nowPlaying,
+    popular,
+    topRated,
+    upcoming,
+    popularNextPage,
+  } = useMovies();
 
   if (isLoading) {
     return (
@@ -21,7 +27,11 @@ const HomeScreen = () => {
     <ScrollView>
       <View style={{ paddingTop: top + 20, paddingBottom: 30 }}>
         <PosterCarousel movies={nowPlaying} />
-        <HorizontalCarousel movies={popular} title='Popular Movies' />
+        <HorizontalCarousel
+          movies={popular}
+          title='Popular Movies'
+          loadNextPage={popularNextPage}
+        />
         <HorizontalCarousel movies={topRated} title='Top Rated Movies' />
         <HorizontalCarousel movies={upcoming} title='Upcoming Movies' />
       </View>
